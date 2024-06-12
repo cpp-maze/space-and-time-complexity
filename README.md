@@ -2,6 +2,7 @@
 
 
 1. [What is Space and Time Complexity](#what-is-space-and-time-complexity)
+2. [Calculation rules for loops](#calculation-rules-for-loops)
  
 ## What is Space and Time Complexity
 
@@ -50,3 +51,80 @@ if (a > b) { // 1 unit
 ```
 
 
+## Calculation rules for loops
+
+Loops are nothing but a simple statements that repeat for some number of times. So, we need to count how many times the statements are going to execute.
+
+### Simple loops
+
+**Looping from 0 to n - 1**
+```cpp
+for (int i = 0; i < n; ++i) {
+	cout << i;
+}
+```
+
+**Looping from n - 1 to 0**
+```cpp
+for (int i = n - 1; i >= 0; --i) {
+	cout << i;
+}
+```
+
+**Find minimum**
+```cpp
+int findMin(int arr[], int n) {
+	int ans = INT_MAX;
+	for (int i = 0; i < n; ++i) {
+		if (ans > arr[i]) {
+			ans = arr[i];
+		}
+	}
+	return ans;
+}
+```
+
+**Iterate by multiplying 2**
+```cpp
+for (int i = 1; i < n; i = i * 2) {
+	cout << i;
+}
+```
+
+**Iterate by dividing 2**
+```cpp
+for (int i = n; i >= 1; i = i / 2) {
+	cout << i;
+}
+```
+
+### Nested loops
+
+**Two nested loops**
+```cpp
+for (int i = 0; i < n; ++i) {
+	for (int j = 0; j < n; ++j) {
+		cout << arr[i][j];
+	}
+}
+```
+
+**Three nested loops**
+```cpp
+for (int i = 0; i < n; ++i) {
+	for (int j = 0; j < n; ++j) {
+		for (int k = 0; k < n; ++k) {
+			cout << arr[i][j][k];
+		}
+	}
+}
+```
+
+**Combination of two different loops**
+```cpp
+for (int i = 0; i < n; ++i) {
+	for (int j = 1; j < n; j = j * 2) {
+		cout << j;
+	}
+}
+```
