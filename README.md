@@ -3,7 +3,8 @@
 
 1. [What is Space and Time Complexity](#what-is-space-and-time-complexity)
 2. [Calculation rules for loops](#calculation-rules-for-loops)
- 
+3. [Types of time functions](#types-of-time-functions)
+
 ## What is Space and Time Complexity
 
 ### Space Complexity
@@ -128,3 +129,23 @@ for (int i = 0; i < n; ++i) {
 	}
 }
 ```
+
+## Types of time functions
+
+| Complexity class			| Name 			|
+|---------------------------|---------------|
+| O(1) 						| Constant 		|
+| O(log n) 					| Logarithmic 	|
+| O(n) 						| Linear 		|
+| O(n log n)				| Linearithmic	|
+| O(n^2^)					| Quadratic 	|
+| O(n^3^)					| Cubic 		|
+| O(2^n^)					| Exponential 	|
+
+
+**Time functions in increasing order**
+
+$$
+1 < log(n) < √n < n < n^2 < n^3 < ... < n^c < 2^n < 3^n < ... < n^n
+$$
+
