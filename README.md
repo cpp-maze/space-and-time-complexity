@@ -164,7 +164,7 @@ The function `f(n) = Ω(g(n))`, if and only if there exists a constant c > 0 and
 <img 
 	src="public/omega-notation.png" 
 	alt="omega notation graph" 
-	style="max-width: 350px"
+	style="max-width: 300px"
 />
 
 ***Big O:*** `O`
@@ -176,7 +176,7 @@ The function `f(n) = O(g(n))`, if and only if there exists a constant c > 0 and 
 <img 
 	src="public/big-O-notation.png" 
 	alt="big O notation graph" 
-	style="max-width: 350px"
+	style="max-width: 300px"
 />
 
 
@@ -189,6 +189,6 @@ The function `f(n) = Θ(g(n))`, if and only if there exists a constant c1 > 0, c
 <img 
 	src="public/theta-notation.png" 
 	alt="theta notation graph" 
-	style="max-width: 350px"
+	style="max-width: 300px"
 />
 
