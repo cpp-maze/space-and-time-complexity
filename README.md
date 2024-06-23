@@ -4,7 +4,8 @@
 1. [What is Space and Time Complexity](#what-is-space-and-time-complexity)
 2. [Calculation rules for loops](#calculation-rules-for-loops)
 3. [Types of time functions](#types-of-time-functions)
-
+4. [Asymptotic notations](#asymptotic-notations)
+ 
 ## What is Space and Time Complexity
 
 ### Space Complexity
@@ -148,4 +149,46 @@ for (int i = 0; i < n; ++i) {
 $$
 1 < log(n) < √n < n < n^2 < n^3 < ... < n^c < 2^n < 3^n < ... < n^n
 $$
+
+
+
+## Asymptotic notations
+Asymptotic notations tells how the Space or Time function is going to grow when the input tends towards a particular value or infinity. It helps us to simplify the Space or Time function. We can use the simplified form of the function to compare algorithms.
+
+***Omega:*** `Ω`
+It is used to find the lower bound of a function.
+
+Let `f(n)` and `g(n)` be the function.
+The function `f(n) = Ω(g(n))`, if and only if there exists a constant c > 0 and a natural number n~0~ such that `c∗g(n) <= f(n)` for all n >= n~0~
+
+<img 
+	src="public/omega-notation.png" 
+	alt="omega notation graph" 
+	style="max-width: 350px"
+/>
+
+***Big O:*** `O`
+It is used to find the upper bound of a function
+
+Let `f(n)` and `g(n)` be the function.
+The function `f(n) = O(g(n))`, if and only if there exists a constant c > 0 and a natural number n~0~ such that `f(n) <= c∗g(n)` for all n >= n~0~
+
+<img 
+	src="public/big-O-notation.png" 
+	alt="big O notation graph" 
+	style="max-width: 350px"
+/>
+
+
+***Theta:*** `Θ`
+It is used to find the average bound of a function
+
+Let `f(n)` and `g(n)` be the function.
+The function `f(n) = Θ(g(n))`, if and only if there exists a constant c1 > 0, c2 > 0 and a natural number n~0~ such that `c1∗g(n) <= f(n) <= c2∗g(n)` for all n >= n~0~
+
+<img 
+	src="public/theta-notation.png" 
+	alt="theta notation graph" 
+	style="max-width: 350px"
+/>
 
