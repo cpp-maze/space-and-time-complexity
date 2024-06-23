@@ -5,7 +5,8 @@
 2. [Calculation rules for loops](#calculation-rules-for-loops)
 3. [Types of time functions](#types-of-time-functions)
 4. [Asymptotic notations](#asymptotic-notations)
- 
+5. [Best, Worst and Average case Analysis](#best-worst-and-average-case-analysis)
+
 ## What is Space and Time Complexity
 
 ### Space Complexity
@@ -164,7 +165,7 @@ The function `f(n) = Ω(g(n))`, if and only if there exists a constant c > 0 and
 <img 
 	src="public/omega-notation.png" 
 	alt="omega notation graph" 
-	style="max-width: 300px"
+	style="max-width: 350px"
 />
 
 ***Big O:*** `O`
@@ -176,7 +177,7 @@ The function `f(n) = O(g(n))`, if and only if there exists a constant c > 0 and 
 <img 
 	src="public/big-O-notation.png" 
 	alt="big O notation graph" 
-	style="max-width: 300px"
+	style="max-width: 350px"
 />
 
 
@@ -189,6 +190,37 @@ The function `f(n) = Θ(g(n))`, if and only if there exists a constant c1 > 0, c
 <img 
 	src="public/theta-notation.png" 
 	alt="theta notation graph" 
-	style="max-width: 300px"
+	style="max-width: 350px"
 />
+
+
+## Best, Worst and Average case Analysis
+
+**Code snippet**
+```cpp
+void A(int n) {
+	if (some condition on n) {
+		// n^2
+	} else {
+		// n⁎log(n)
+	}
+
+	if (different condition on n) {
+		// n
+	} else {
+		// n^3
+	}
+}
+```
+
+**Linear search**
+```cpp
+int search(int arr[], int n, int target) {
+	for (int i = 0; i < n; ++i) {
+		if (arr[i] == target) return i;
+	}
+
+	return -1;
+}
+```
 
