@@ -6,6 +6,10 @@
 3. [Types of time functions](#types-of-time-functions)
 4. [Asymptotic notations](#asymptotic-notations)
 5. [Best, Worst and Average case Analysis](#best-worst-and-average-case-analysis)
+6. [Calculation rules for decreasing function](#calculation-rules-for-decreasing-function)
+7. [Master's theorem for decreasing function](#masters-theorem-for-decreasing-function)
+8. [Calculation rules for dividing function](#calculation-rules-for-dividing-function)
+9. [Master's theorem for dividing function](#masters-theorem-for-dividing-function)
 
 ## What is Space and Time Complexity
 
@@ -224,3 +228,181 @@ int search(int arr[], int n, int target) {
 }
 ```
 
+## Calculation rules for decreasing function 
+
+**Calling in-build function**
+```cpp
+void A(int n) {
+	int res = sqrt(n);
+	cout << res;
+}
+```
+
+**Calling user defined function**
+```cpp
+void A(int n) {
+	int res = B(n);
+	cout << res;
+}
+
+void B(int n) {
+	// statements
+}
+```
+
+**Print n to 1**
+```cpp
+void A(int n) {
+	if (n > 0) {
+		cout << n;
+		A(n - 1);
+	}
+}
+```
+
+**Print 0 to n - 1 for all numbers from n to 1**
+```cpp
+void A(int n) {
+	if (n > 0) {
+		for (int i = 0; i < n; i++) {
+			cout << i;
+		}
+		A(n - 1);
+	}
+}
+```
+
+**Find n^th^ fibonacci number**
+```cpp
+int Fib(int n) {
+	if (n <= 1) {
+		return n;
+	}
+	return Fib(n - 1) + Fib(n - 2);
+}
+```
+
+## Master's theorem for decreasing function
+
+Consider the time function for the given algorithm as 
+
+$$
+a * A(n - b) * f(n)
+$$
+
+where **a > 0** and **b > 0**.
+
+For example `2 * A(n - 1) * 1`, here `a = 2`, `b = 1` and `f(n) = 1`
+
+The Masters's theorem for decreasing function is divided in to two cases:
+
+### Case i: (a == 1)
+> **Multiply the `f(n)` with `n`**
+
+In the above equation the `f(n) = 1` so, 
+
+=> f(n) * n 
+=> 1 * n 
+=> O(n)
+
+If `f(n) = n` then 
+
+=> f(n) * n 
+=> n * n 
+=> O(n^2^)
+
+### Case ii: (a > 1)
+> **Multiply the `f(n)` with a^n^**
+
+In the above equation the `a = 2` and `f(n) = 1` so, 
+
+=> f(n) * 2^n^ 
+=> 1 * 2^n^ 
+=> O(2^n^)
+
+
+If the equation contains `a = 3` and `f(n) = n`, 
+
+=> f(n) * 3^n^ 
+=> n * 3^n^ 
+=> O(n * 3^n^)
+
+
+
+## Calculation rules for dividing function
+
+**Code snippet**
+```cpp
+void A(int n) {
+	if (n > 1) {
+		cout << n;
+		A(n / 2);
+	}
+}
+```
+
+**Code snippet**
+```cpp
+void A(int n) {
+	if (n > 1) {
+		for (int i = 0; i < n; ++i) {
+			cout << i;
+		}
+		A(n / 2);
+	}
+}
+```
+
+**Code snippet**
+```cpp
+void A(int n) {
+	if (n > 1) {
+		for (int i = 0; i < n; ++i) {
+			cout << i;
+		}
+		A(n / 2);
+		A(n / 2);
+	}
+}
+```
+## Master's theorem for dividing function
+
+
+Consider the time function for the given algorithm as 
+
+$$ 
+a * A(n / b) * f(n)
+$$
+where **a > 0** and **b > 0**
+
+`f(n)` can be represented as **n^k^ * log^p^n**
+
+For example `2 * A(n / 2) * 1`, here `a = 2`, `b = 2`, `k = 0` and `p = 0`
+
+The Masters's theorem for dividing function is divided in to three cases:
+
+### Case i: (log<small><sub>b</sub></small>a > k)
+> **Take n<sup>log<small><sub>b</sub></small>a</sup>**
+
+### Case ii: (log<small><sub>b</sub></small>a = k)
+
+This second case is divided into further three sub cases.
+
+>#### Case 1: p >= 0
+>> **Multiply f(n) with log(n)**
+>
+>#### Case 2: p = -1
+>> **Multiply n^k^ with loglog(n)**
+>
+>#### Case 3: p < -1
+>> **Take n^k^**
+
+### Case iii: (log<small><sub>b</sub></small>a < k)
+
+This third case is divided into further two sub cases.
+
+>#### Case 1: p >= 0
+>> **Take f(n)**
+>
+>#### Case 2: p < 0
+>> **Take n^k^**
