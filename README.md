@@ -260,7 +260,7 @@ void A(int n) {
 }
 ```
 
-**Print 0 to n - 1 for all numbers from n to 1**
+**Print 0 to n - 1 for all numbers**
 ```cpp
 void A(int n) {
 	if (n > 0) {
@@ -287,7 +287,7 @@ int Fib(int n) {
 Consider the time function for the given algorithm as 
 
 $$
-a * A(n - b) * f(n)
+a * A(n - b) + f(n)
 $$
 
 where **a > 0** and **b > 0**.
@@ -371,7 +371,7 @@ void A(int n) {
 Consider the time function for the given algorithm as 
 
 $$ 
-a * A(n / b) * f(n)
+a * A(n / b) + f(n)
 $$
 where **a > 0** and **b > 0**
 
