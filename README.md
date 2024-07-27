@@ -373,7 +373,7 @@ Consider the time function for the given algorithm as
 $$ 
 a * A(n / b) + f(n)
 $$
-where **a > 0** and **b > 0**
+where **a > 0** and **b > 1**
 
 `f(n)` can be represented as **n^k^ * log^p^n**
 
